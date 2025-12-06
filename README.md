@@ -48,14 +48,14 @@ pip (Python package manager)
 
 Quick Install
 bash# Clone the repository
-git clone https://github.com/yourusername/security-toolkit-cli.git
+git clone https://github.com/thelkotolsantosh/dorker.git
 cd security-toolkit-cli
 
 # Install required dependencies
 pip install -r requirements.txt
 
 # Make the script executable (Linux/Mac)
-chmod +x security_toolkit.py
+chmod +x dorker.py
 Optional: Google Custom Search API Setup
 For better dorking results (recommended):
 
@@ -69,7 +69,7 @@ Note: Without API keys, the tool will use the fallback googlesearch module (less
 📖 Usage
 Interactive Mode (Recommended for Beginners)
 Simply run the script without arguments:
-bashpython3 security_toolkit.py
+bashpython3 dorker.py
 Follow the interactive prompts to:
 
 Enter target domain
@@ -78,22 +78,22 @@ View and save results
 
 Command-Line Mode (Advanced)
 bash# Google Dorking
-python3 security_toolkit.py --target example.com --module dork --dork-type 1
+python3 dorker.py --target example.com --module dork --dork-type 1
 
 # Email Enumeration
-python3 security_toolkit.py --target example.com --module email --output emails.txt
+python3 dorker.py --target example.com --module email --output emails.txt
 
 # Directory Busting
-python3 security_toolkit.py --target https://example.com --module dirbust
+python3 dorker.py --target https://example.com --module dirbust
 
 # Directory Busting with Custom Wordlist
-python3 security_toolkit.py --target https://example.com --module dirbust --wordlist custom.txt
+python3 dorker.py --target https://example.com --module dirbust --wordlist custom.txt
 
 # Vulnerability Scan
-python3 security_toolkit.py --target https://example.com --module vulnscan
+python3 dorker.py --target https://example.com --module vulnscan
 
 # Full Scan (All Modules)
-python3 security_toolkit.py --target example.com --module full
+python3 dorker.py --target example.com --module full
 Dork Categories
 
 Domain Enumeration - Subdomains, dev environments, staging servers
@@ -118,7 +118,7 @@ vulnscan_YYYYMMDD_HHMMSS.json - Vulnerability scan report
 
 🔧 Configuration
 Custom Dork Templates
-Edit the dork lists in security_toolkit.py:
+Edit the dork lists in dorker.py:
 pythonDOMAIN_ENUM_DORKS = [
     "site:*.example.com -www",
     "your custom dork here",
@@ -133,14 +133,14 @@ Then use with --wordlist custom.txt
 
 📚 Examples
 Example 1: Bug Bounty Reconnaissance
-bashpython3 security_toolkit.py
+bashpython3 dorker.py
 # Enter: tesla.com
 # Choose: 1 (Google Dorking)
 # Choose: 2 (Bug Bounty Recon)
 Example 2: Full Domain Assessment
-bashpython3 security_toolkit.py --target example.com --module full
+bashpython3 dorker.py --target example.com --module full
 Example 3: Directory Enumeration with Custom Wordlist
-bashpython3 security_toolkit.py -t https://example.com -m dirbust -w wordlists/big.txt
+bashpython3 dorker.py -t https://example.com -m dirbust -w wordlists/big.txt
 
 🐛 Troubleshooting
 "No search method available"
@@ -151,8 +151,8 @@ Use Google Custom Search API instead of scraping
 Add delays between requests (already implemented)
 Use proxy or VPN if needed
 Permission Denied
-Make script executable: chmod +x security_toolkit.py
-Run with python3: python3 security_toolkit.py
+Make script executable: chmod +x dorker.py
+Run with python3: python3 dorker.py
 
 🤝 Contributing
 Contributions are welcome! Please:
